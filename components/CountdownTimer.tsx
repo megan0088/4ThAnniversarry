@@ -113,7 +113,7 @@ export default function CountdownTimer() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            Menghitung hari
+            Counting Down
           </motion.p>
           <motion.h2
             className="text-4xl md:text-6xl font-bold"
@@ -179,7 +179,7 @@ export default function CountdownTimer() {
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
         >
-          Setiap detik bersama kamu adalah anugerah ✨
+          Every second with you is a gift ✨
         </motion.p>
       </div>
     </section>

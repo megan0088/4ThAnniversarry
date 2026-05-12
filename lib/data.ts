@@ -19,9 +19,9 @@ export const timelineEvents: TimelineEvent[] = [
   {
     id: 1,
     title: "First Meet",
-    subtitle: "Awal dari segalanya",
+    subtitle: "Where it all began",
     description:
-      "Pertemuan pertama yang terasa biasa, tapi ternyata menjadi titik balik termanis dalam hidupku. Seperti scene anime yang tak terduga.",
+      "A first meeting that felt ordinary, but turned out to be the sweetest turning point of my life. Like an unexpected anime scene I never saw coming.",
     date: "May 2022",
     emoji: "🌸",
     gradient: "from-pink-500/30 via-rose-400/20 to-purple-500/30",
@@ -29,9 +29,9 @@ export const timelineEvents: TimelineEvent[] = [
   {
     id: 2,
     title: "First Date",
-    subtitle: "Ketika semuanya berubah",
+    subtitle: "When everything changed",
     description:
-      "Saat aku duduk di seberangmu dan menyadari — ini dia, orang yang akan mengubah hidupku. Matamu bicara lebih banyak dari kata-katamu.",
+      "Sitting across from you, I realized — this is her, the one who will change my life. Your eyes said more than any words ever could.",
     date: "June 2022",
     emoji: "🌙",
     gradient: "from-indigo-400/30 via-purple-400/20 to-pink-500/30",
@@ -39,9 +39,9 @@ export const timelineEvents: TimelineEvent[] = [
   {
     id: 3,
     title: "First Anniversary",
-    subtitle: "Satu tahun penuh cinta",
+    subtitle: "One year full of love",
     description:
-      "Setahun penuh tawa, cerita, dan momen yang terlalu berharga untuk dilupakan. Aku tidak bisa membayangkan melewatinya tanpa kamu.",
+      "A whole year of laughter, stories, and moments too precious to forget. I couldn't imagine having gone through any of it without you.",
     date: "May 2023",
     emoji: "💫",
     gradient: "from-amber-400/30 via-rose-400/20 to-pink-500/30",
@@ -49,9 +49,9 @@ export const timelineEvents: TimelineEvent[] = [
   {
     id: 4,
     title: "Beautiful Memories",
-    subtitle: "Setiap momen terasa ajaib",
+    subtitle: "Every moment feels magical",
     description:
-      "Dari perjalanan kecil hingga malam-malam biasa yang terasa istimewa. Setiap frame bersamamu adalah favoritku.",
+      "From little adventures to ordinary nights that somehow felt extraordinary. Every frame with you is my absolute favorite.",
     date: "2024",
     emoji: "✨",
     gradient: "from-teal-400/30 via-purple-400/20 to-indigo-400/30",
@@ -59,9 +59,9 @@ export const timelineEvents: TimelineEvent[] = [
   {
     id: 5,
     title: "Today & Forever",
-    subtitle: "4 tahun dan terus berjalan",
+    subtitle: "4 years and still going",
     description:
-      "Hari ini kita berdiri di tahun keempat. Dan aku tahu — ini baru awal dari bab terpanjang dan terindah yang pernah kita tulis bersama.",
+      "Here we stand at year four. And I know — this is only the beginning of the longest and most beautiful chapter we will ever write together.",
     date: "May 2026",
     emoji: "❤️",
     gradient: "from-rose-500/40 via-pink-400/25 to-purple-500/30",
@@ -132,71 +132,71 @@ export const galleryImages: string[] = [
 export const reasons: Reason[] = [
   {
     id: 1,
-    text: "Senyummu adalah matahari di hari tergelapku",
+    text: "Your smile is the sun on my darkest days",
     emoji: "☀️",
     gradient: "from-amber-400/20 to-rose-400/20",
   },
   {
     id: 2,
-    text: "Kamu mengerti aku bahkan tanpa kata-kata",
+    text: "You understand me even without words",
     emoji: "🌙",
     gradient: "from-indigo-400/20 to-purple-400/20",
   },
   {
     id: 3,
-    text: "Tawamu adalah lagu paling merdu yang pernah kudengar",
+    text: "Your laugh is the sweetest song I've ever heard",
     emoji: "🎵",
     gradient: "from-pink-400/20 to-lavender/20",
   },
   {
     id: 4,
-    text: "Kamu membuat momen biasa terasa luar biasa",
+    text: "You turn ordinary moments into something extraordinary",
     emoji: "✨",
     gradient: "from-teal-400/20 to-cyan-400/20",
   },
   {
     id: 5,
-    text: "Bersamamu, rumah bukan soal tempat tapi soal rasa",
+    text: "With you, home is not a place — it's a feeling",
     emoji: "🏡",
     gradient: "from-rose-400/20 to-orange-400/20",
   },
   {
     id: 6,
-    text: "Kamu adalah ketenangan di tengah segala badai",
+    text: "You are my calm in the middle of every storm",
     emoji: "🌊",
     gradient: "from-blue-400/20 to-indigo-400/20",
   },
   {
     id: 7,
-    text: "Matamu menyimpan cerita yang selalu ingin kubaca",
+    text: "Your eyes hold stories I never want to stop reading",
     emoji: "🌟",
     gradient: "from-purple-400/20 to-pink-400/20",
   },
   {
     id: 8,
-    text: "Kamu adalah karakter utama di anime hidupku",
+    text: "You are the main character of my life's anime",
     emoji: "🌸",
     gradient: "from-pink-400/20 to-rose-400/20",
   },
   {
     id: 9,
-    text: "Setiap hari denganmu terasa seperti scene favoritku",
+    text: "Every day with you feels like my favorite scene",
     emoji: "💫",
     gradient: "from-amber-400/20 to-pink-400/20",
   },
 ];
 
-export const loveLetterText = `Kiki yang tersayang,
+export const loveLetterText = `My dearest Kiki,
 
-Kalau cinta ini adalah anime, maka kamu adalah opening yang selalu aku nantikan setiap hari.
+If this love were an anime, you would be the opening theme I look forward to every single day.
 
-Sudah 4 tahun kita berjalan bersama. Bukan perjalanan yang selalu mulus, tapi justru di sela-sela itu — saat kita diam, saat kita berdebat kecil, saat kita tertawa tengah malam — aku selalu merasa: ini benar.
+Four years have passed since we began this journey. It hasn't always been smooth sailing — but it's in those quiet in-between moments — the silences, the small arguments, the late-night laughter — that I always knew: this is right.
 
-Kamu hadir bukan hanya di momen-momen besar. Kamu hadir di pagi yang biasa, di pesan singkat tengah hari, di tatapan yang tidak perlu kata-kata. Dan itulah hal yang paling aku syukuri.
+You're not only there for the big moments. You're there in ordinary mornings, in a quick message in the middle of the day, in a glance that needs no words. And that is the thing I am most grateful for.
 
-Terima kasih sudah menjadi orangnya. Orangnya yang bikin dunia terasa lebih ringan, lebih berwarna, dan lebih masuk akal untuk dijalani.
+Thank you for being the one. The one who makes the world feel lighter, more colorful, and more worth living.
 
-Hari ini, empat tahun kemudian, aku masih memilih kamu. Dan aku ingin terus memilihmu, di setiap tahun yang tersisa.
+Today, four years later, I still choose you. And I want to keep choosing you, for every year that's yet to come.
 
-Selamanya,
+Forever yours,
 Ega ❤️`;

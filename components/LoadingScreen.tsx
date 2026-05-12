@@ -182,7 +182,7 @@ export default function LoadingScreen({ onComplete }: Props) {
               animate={{ opacity: 1 }}
               transition={{ delay: 2, duration: 1 }}
             >
-              4 tahun cinta, kenangan, dan selamanya bersama
+              4 years of love, memories, and forever together
             </motion.p>
 
             {/* Loading dots */}

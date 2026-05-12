@@ -169,7 +169,7 @@ export default function GallerySection() {
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          {cards.length} momen yang tak terlupakan 🌸
+          {cards.length} unforgettable moments 🌸
         </motion.p>
       </div>
 

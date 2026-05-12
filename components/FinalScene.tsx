@@ -192,7 +192,7 @@ export default function FinalScene() {
           viewport={{ once: true }}
           transition={{ delay: 1, duration: 1 }}
         >
-          4 tahun, ribuan momen, satu hati
+          4 years, thousands of moments, one heart
         </motion.p>
 
         {/* CTA button */}
