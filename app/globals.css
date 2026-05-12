@@ -1,0 +1,321 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Nunito", system-ui, sans-serif;
+  --font-script: "Dancing Script", cursive;
+
+  --color-sakura: #ffb7c5;
+  --color-sakura-light: #ffd4dc;
+  --color-sakura-dark: #e88a9a;
+  --color-lavender: #c9b8e8;
+  --color-lavender-light: #e4d9f5;
+  --color-peach: #ffd4b8;
+  --color-rose-gold: #e8a4a4;
+  --color-deep-navy: #0a0e1a;
+  --color-midnight: #13192b;
+  --color-twilight: #1e2640;
+  --color-warm-white: #fff8f5;
+  --color-gold: #f7d08a;
+  --color-aurora-1: #6b3fa0;
+  --color-aurora-2: #2d1b69;
+  --color-firefly: #aaffaa;
+
+  --animate-float: float 4s ease-in-out infinite;
+  --animate-heartbeat: heartbeat 1.5s ease-in-out infinite;
+  --animate-twinkle: twinkle 3s ease-in-out infinite;
+  --animate-glow-pulse: glow-pulse 2.5s ease-in-out infinite;
+  --animate-aurora: aurora 10s ease infinite;
+  --animate-moon-glow: moon-glow 3s ease-in-out infinite;
+  --animate-cursor-blink: cursor-blink 1s step-end infinite;
+  --animate-spin-slow: spin 8s linear infinite;
+}
+
+@keyframes sakura-fall {
+  0% {
+    transform: translateY(-20px) translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  25% {
+    transform: translateY(25vh) translateX(30px) rotate(90deg);
+  }
+  50% {
+    transform: translateY(50vh) translateX(-20px) rotate(200deg);
+  }
+  75% {
+    transform: translateY(75vh) translateX(15px) rotate(300deg);
+  }
+  100% {
+    transform: translateY(110vh) translateX(-10px) rotate(420deg);
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.15);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 15px rgba(255, 183, 197, 0.4),
+      0 0 30px rgba(255, 183, 197, 0.15);
+  }
+  50% {
+    box-shadow:
+      0 0 35px rgba(255, 183, 197, 0.8),
+      0 0 70px rgba(255, 183, 197, 0.35);
+  }
+}
+
+@keyframes aurora {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes moon-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 25px rgba(255, 236, 180, 0.6))
+      drop-shadow(0 0 50px rgba(255, 236, 180, 0.25));
+  }
+  50% {
+    filter: drop-shadow(0 0 45px rgba(255, 236, 180, 0.9))
+      drop-shadow(0 0 90px rgba(255, 236, 180, 0.45));
+  }
+}
+
+@keyframes cursor-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes float-heart {
+  0% {
+    transform: translateY(0) scale(1) rotate(-10deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120px) scale(0.3) rotate(20deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(140px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(140px) rotate(-360deg);
+  }
+}
+
+@keyframes lantern-rise {
+  0% {
+    transform: translateY(0) translateX(0) rotate(-3deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-40vh) translateX(20px) rotate(3deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-90vh) translateX(-10px) rotate(-3deg);
+    opacity: 0;
+  }
+}
+
+@keyframes firefly {
+  0%,
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.2;
+  }
+  25% {
+    transform: translate(30px, -20px);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-20px, -40px);
+    opacity: 0.3;
+  }
+  75% {
+    transform: translate(40px, -15px);
+    opacity: 0.9;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Prevent font scaling in landscape on iOS */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: #0a0e1a;
+  color: #fff8f5;
+  font-family: "Nunito", system-ui, sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+  /* Smooth momentum scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (hover: none) {
+  body {
+    cursor: auto;
+  }
+}
+
+/* Ensure all interactive elements meet 44px minimum touch target */
+button,
+a,
+[role="button"] {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0e1a;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #ffb7c5, #c9b8e8);
+  border-radius: 3px;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(19, 25, 43, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 183, 197, 0.12);
+}
+
+.glass-light {
+  background: rgba(255, 248, 245, 0.07);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 248, 245, 0.12);
+}
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, #ffb7c5 0%, #c9b8e8 50%, #ffd4b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #f7d08a 0%, #e8a4a4 50%, #ffb7c5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow text */
+.text-glow {
+  text-shadow:
+    0 0 20px rgba(255, 183, 197, 0.8),
+    0 0 40px rgba(255, 183, 197, 0.4),
+    0 0 80px rgba(255, 183, 197, 0.15);
+}
+
+.text-glow-gold {
+  text-shadow:
+    0 0 20px rgba(247, 208, 138, 0.8),
+    0 0 40px rgba(247, 208, 138, 0.4);
+}
+
+/* Shimmer button */
+.btn-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 183, 197, 0.08) 0%,
+    rgba(255, 183, 197, 0.25) 40%,
+    rgba(201, 184, 232, 0.25) 60%,
+    rgba(255, 183, 197, 0.08) 100%
+  );
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+  border: 1px solid rgba(255, 183, 197, 0.35);
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
+}
+
+.btn-shimmer:hover {
+  border-color: rgba(255, 183, 197, 0.7);
+  box-shadow:
+    0 0 20px rgba(255, 183, 197, 0.35),
+    0 0 40px rgba(255, 183, 197, 0.15);
+}
