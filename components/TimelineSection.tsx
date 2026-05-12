@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
 import { timelineEvents } from "@/lib/data";
 
@@ -92,41 +91,11 @@ export default function TimelineSection() {
 
                     {/* Photo */}
                     <div className="w-full h-44 rounded-xl mb-4 relative overflow-hidden">
-                      {event.imagePath ? (
-                        <>
-                          <Image
-                            src={event.imagePath}
-                            alt={event.title}
-                            fill
-                            className="object-cover transition-transform duration-700 group-hover:scale-105"
-                            sizes="(max-width: 768px) 100vw, 50vw"
-                          />
-                          {/* Soft gradient overlay at bottom for text legibility */}
-                          <div
-                            className="absolute inset-0 pointer-events-none"
-                            style={{
-                              background:
-                                "linear-gradient(to top, rgba(10,14,26,0.55) 0%, transparent 60%)",
-                            }}
-                          />
-                          {/* Emoji badge */}
-                          <div
-                            className="absolute top-2 right-2 w-8 h-8 rounded-full flex items-center justify-center text-sm"
-                            style={{
-                              background: "rgba(10,14,26,0.6)",
-                              backdropFilter: "blur(8px)",
-                            }}
-                          >
-                            {event.emoji}
-                          </div>
-                        </>
-                      ) : (
-                        <div
-                          className={`absolute inset-0 bg-gradient-to-br ${event.gradient} flex items-center justify-center text-4xl opacity-70`}
-                        >
-                          {event.emoji}
-                        </div>
-                      )}
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-br ${event.gradient} flex items-center justify-center text-4xl opacity-70`}
+                      >
+                        {event.emoji}
+                      </div>
                     </div>
 
                     <span
