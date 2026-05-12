@@ -6,17 +6,6 @@ export interface TimelineEvent {
   date: string;
   emoji: string;
   gradient: string;
-  imagePath?: string;
-}
-
-export interface GalleryItem {
-  id: number;
-  title: string;
-  description: string;
-  gradient: string;
-  emoji: string;
-  rotate: number;
-  imagePath?: string;
 }
 
 export interface Reason {
@@ -36,7 +25,6 @@ export const timelineEvents: TimelineEvent[] = [
     date: "May 2022",
     emoji: "🌸",
     gradient: "from-pink-500/30 via-rose-400/20 to-purple-500/30",
-    imagePath: "/images/egakiki/IMG_0911.JPG",
   },
   {
     id: 2,
@@ -46,8 +34,7 @@ export const timelineEvents: TimelineEvent[] = [
       "Saat aku duduk di seberangmu dan menyadari — ini dia, orang yang akan mengubah hidupku. Matamu bicara lebih banyak dari kata-katamu.",
     date: "June 2022",
     emoji: "🌙",
-    gradient: "from-lavender/30 via-purple-400/20 to-pink-500/30",
-    imagePath: "/images/egakiki/IMG_1039.JPG",
+    gradient: "from-indigo-400/30 via-purple-400/20 to-pink-500/30",
   },
   {
     id: 3,
@@ -58,7 +45,6 @@ export const timelineEvents: TimelineEvent[] = [
     date: "May 2023",
     emoji: "💫",
     gradient: "from-amber-400/30 via-rose-400/20 to-pink-500/30",
-    imagePath: "/images/egakiki/IMG_1547.JPG",
   },
   {
     id: 4,
@@ -68,8 +54,7 @@ export const timelineEvents: TimelineEvent[] = [
       "Dari perjalanan kecil hingga malam-malam biasa yang terasa istimewa. Setiap frame bersamamu adalah favoritku.",
     date: "2024",
     emoji: "✨",
-    gradient: "from-teal-400/30 via-purple-400/20 to-lavender/30",
-    imagePath: "/images/egakiki/IMG_1575.JPG",
+    gradient: "from-teal-400/30 via-purple-400/20 to-indigo-400/30",
   },
   {
     id: 5,
@@ -80,65 +65,68 @@ export const timelineEvents: TimelineEvent[] = [
     date: "May 2026",
     emoji: "❤️",
     gradient: "from-rose-500/40 via-pink-400/25 to-purple-500/30",
-    imagePath: "/images/egakiki/IMG_1603.JPG",
   },
 ];
 
-export const galleryItems: GalleryItem[] = [
-  {
-    id: 1,
-    title: "Our First Chapter",
-    description: "Awal yang indah",
-    gradient: "from-pink-500 via-rose-400 to-orange-300",
-    emoji: "🌸",
-    rotate: -3,
-    imagePath: "/images/egakiki/IMG_1546.JPG",
-  },
-  {
-    id: 2,
-    title: "Under the Stars",
-    description: "Malam bersamamu",
-    gradient: "from-indigo-600 via-purple-500 to-pink-400",
-    emoji: "🌙",
-    rotate: 2,
-    imagePath: "/images/egakiki/IMG_1553.JPG",
-  },
-  {
-    id: 3,
-    title: "Sweet Moments",
-    description: "Setiap detik berharga",
-    gradient: "from-amber-400 via-rose-400 to-pink-500",
-    emoji: "💕",
-    rotate: -2,
-    imagePath: "/images/egakiki/IMG_1560.JPG",
-  },
-  {
-    id: 4,
-    title: "Adventure Together",
-    description: "Petualangan kita",
-    gradient: "from-teal-400 via-cyan-400 to-blue-500",
-    emoji: "🗺️",
-    rotate: 3,
-    imagePath: "/images/egakiki/IMG_1568.JPG",
-  },
-  {
-    id: 5,
-    title: "Warm Evenings",
-    description: "Sore yang hangat",
-    gradient: "from-orange-400 via-rose-500 to-pink-600",
-    emoji: "🌅",
-    rotate: -1,
-    imagePath: "/images/egakiki/IMG_1582.JPG",
-  },
-  {
-    id: 6,
-    title: "Forever & Always",
-    description: "Selamanya bersamamu",
-    gradient: "from-purple-600 via-pink-500 to-rose-400",
-    emoji: "❤️",
-    rotate: 2,
-    imagePath: "/images/egakiki/IMG_1595.JPG",
-  },
+// All gallery photos — filenames from /public/images/egakiki/
+export const galleryImages: string[] = [
+  "AwalPacaran.webp",
+  "NontonBioskop.webp",
+  "AquariumDate.webp",
+  "aquariumdate2.webp",
+  "diraindear.webp",
+  "diraindear2.webp",
+  "raindear2.webp",
+  "ditempatpizza.webp",
+  "ditempatpizza2.webp",
+  "kitangopidinako.webp",
+  "kecafedaerahsurken.webp",
+  "ngopididaerahcisarua.webp",
+  "ngopididaerahcisarua2.webp",
+  "kecurugdigede.webp",
+  "lembang.webp",
+  "lembang2.webp",
+  "lembang3.webp",
+  "lembang4.webp",
+  "lembang5.webp",
+  "laripagi.webp",
+  "sunmorikewarpat.webp",
+  "belanjaaaa.webp",
+  "belanjaacariceelana.webp",
+  "egaulangtahun.webp",
+  "egaulangtahun2.webp",
+  "egaulangtahun3.webp",
+  "egaulangtahun4.webp",
+  "egaulangtahun5.webp",
+  "egaulangtahun24.webp",
+  "UlangTahunEga24.webp",
+  "egaulangtahun25.webp",
+  "egaulangtahun25(2).webp",
+  "egaulangtahun25(3).webp",
+  "Anniversary.webp",
+  "BukberPertamaSamaKeluarga.webp",
+  "makanmakansamakeluarga ega.webp",
+  "Dirumakikimaukeundangan.webp",
+  "kikihpbaru.webp",
+  "lagimainsamatemen2kiki.webp",
+  "mainsamatemenkiki2.webp",
+  "laginontonbioskop.webp",
+  "undangan.webp",
+  "undangan3.webp",
+  "undangan6.webp",
+  "Undanganriska.webp",
+  "undangancoti.webp",
+  "undangancoti2.webp",
+  "undanganmaul.webp",
+  "undanganmaul2.webp",
+  "undanganlupatapidimana.webp",
+  "keundangan4.webp",
+  "lupa.webp",
+  "lupaaa.webp",
+  "lupaa4.webp",
+  "lupadimanatapikikicantik.webp",
+  "lupadimanatapikikicantik2.webp",
+  "jujurlupa.webp",
 ];
 
 export const reasons: Reason[] = [
