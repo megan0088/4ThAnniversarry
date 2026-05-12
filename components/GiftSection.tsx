@@ -1,39 +1,40 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import RoseFlower from "./RoseFlower";
 
 const ROSES = [
-  { id: 0,  x: 0,    y: -185, scale: 1.5,  rotate: 0,   delay: 0.04, size: 52, e: "🌹" },
-  { id: 1,  x: -105, y: -148, scale: 1.1,  rotate: -20, delay: 0.10, size: 44, e: "🌹" },
-  { id: 2,  x: 105,  y: -148, scale: 1.1,  rotate: 20,  delay: 0.10, size: 44, e: "🌹" },
-  { id: 3,  x: -175, y: -85,  scale: 0.88, rotate: -38, delay: 0.16, size: 38, e: "🌹" },
-  { id: 4,  x: 175,  y: -85,  scale: 0.88, rotate: 38,  delay: 0.16, size: 38, e: "🌹" },
-  { id: 5,  x: -58,  y: -228, scale: 0.78, rotate: -10, delay: 0.20, size: 34, e: "🌹" },
-  { id: 6,  x: 58,   y: -228, scale: 0.78, rotate: 10,  delay: 0.20, size: 34, e: "🌹" },
-  { id: 7,  x: -148, y: -172, scale: 0.68, rotate: -28, delay: 0.25, size: 30, e: "🌸" },
-  { id: 8,  x: 148,  y: -172, scale: 0.68, rotate: 28,  delay: 0.25, size: 30, e: "🌸" },
-  { id: 9,  x: 0,    y: -265, scale: 0.62, rotate: 5,   delay: 0.28, size: 28, e: "🌹" },
-  { id: 10, x: -208, y: -115, scale: 0.55, rotate: -52, delay: 0.32, size: 26, e: "🌸" },
-  { id: 11, x: 208,  y: -115, scale: 0.55, rotate: 52,  delay: 0.32, size: 26, e: "🌸" },
+  { id: 0,  x: 0,    y: -210, size: 100, hue: 340, delay: 0.04 },
+  { id: 1,  x: -125, y: -168, size: 82,  hue: 345, delay: 0.10 },
+  { id: 2,  x: 125,  y: -168, size: 82,  hue: 335, delay: 0.10 },
+  { id: 3,  x: -208, y: -100, size: 68,  hue: 350, delay: 0.16 },
+  { id: 4,  x: 208,  y: -100, size: 68,  hue: 330, delay: 0.16 },
+  { id: 5,  x: -68,  y: -258, size: 58,  hue: 342, delay: 0.20 },
+  { id: 6,  x: 68,   y: -258, size: 58,  hue: 338, delay: 0.20 },
+  { id: 7,  x: -165, y: -198, size: 52,  hue: 320, delay: 0.25 },
+  { id: 8,  x: 165,  y: -198, size: 52,  hue: 355, delay: 0.25 },
+  { id: 9,  x: 0,    y: -305, size: 46,  hue: 340, delay: 0.29 },
+  { id: 10, x: -240, y: -130, size: 40,  hue: 315, delay: 0.33 },
+  { id: 11, x: 240,  y: -130, size: 40,  hue: 360, delay: 0.33 },
 ];
 
-const SPARKLES = [
-  { id: 0,  x: -85,  y: -65,  delay: 0.14 },
-  { id: 1,  x: 85,   y: -65,  delay: 0.17 },
-  { id: 2,  x: -125, y: 15,   delay: 0.19 },
-  { id: 3,  x: 125,  y: 15,   delay: 0.19 },
-  { id: 4,  x: -55,  y: 80,   delay: 0.24 },
-  { id: 5,  x: 55,   y: 80,   delay: 0.24 },
-  { id: 6,  x: 5,    y: -95,  delay: 0.16 },
-  { id: 7,  x: -108, y: -112, delay: 0.29 },
-  { id: 8,  x: 108,  y: -112, delay: 0.29 },
-  { id: 9,  x: -42,  y: -162, delay: 0.33 },
-  { id: 10, x: 42,   y: -162, delay: 0.33 },
+const PETALS = [
+  { id: 0,  x: -90,  y: -80,  delay: 0.12 },
+  { id: 1,  x: 90,   y: -80,  delay: 0.15 },
+  { id: 2,  x: -140, y: 10,   delay: 0.18 },
+  { id: 3,  x: 140,  y: 10,   delay: 0.18 },
+  { id: 4,  x: -60,  y: 90,   delay: 0.22 },
+  { id: 5,  x: 60,   y: 90,   delay: 0.22 },
+  { id: 6,  x: 5,    y: -105, delay: 0.14 },
+  { id: 7,  x: -115, y: -125, delay: 0.27 },
+  { id: 8,  x: 115,  y: -125, delay: 0.27 },
+  { id: 9,  x: -48,  y: -175, delay: 0.31 },
+  { id: 10, x: 48,   y: -175, delay: 0.31 },
+  { id: 11, x: 0,    y: 105,  delay: 0.20 },
 ];
 
 const BOX_W = 180;
 const BOX_H = 130;
-const LID_W = 196;
 const LID_H = 48;
 
 export default function GiftSection() {
@@ -55,6 +56,20 @@ export default function GiftSection() {
             "radial-gradient(ellipse at 50% 55%, rgba(200,16,46,0.07) 0%, transparent 68%)",
         }}
       />
+
+      {/* Full screen golden flash on open */}
+      <AnimatePresence>
+        {opened && (
+          <motion.div
+            className="fixed inset-0 pointer-events-none"
+            style={{ background: "rgba(255,210,120,0.55)", zIndex: 150 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: [0, 0.7, 0] }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.6, times: [0, 0.08, 1] }}
+          />
+        )}
+      </AnimatePresence>
 
       {/* Section header */}
       <div className="text-center mb-16 px-4">
@@ -85,65 +100,103 @@ export default function GiftSection() {
         </motion.h2>
       </div>
 
-      {/* Interactive area */}
       <div className="flex flex-col items-center gap-10 px-4">
-        {/* Box + roses container */}
-        <div className="relative" style={{ width: 340, height: 380 }}>
+        {/* Main container — tall enough for all roses */}
+        <div className="relative" style={{ width: 340, height: 520 }}>
 
-          {/* Zero-width anchor at the top of the box (roses burst from here) */}
+          {/* Light burst from box on open */}
+          <AnimatePresence>
+            {opened && (
+              <motion.div
+                style={{
+                  position: "absolute",
+                  bottom: BOX_H / 2,
+                  left: "50%",
+                  width: 30,
+                  height: 30,
+                  borderRadius: "50%",
+                  background:
+                    "radial-gradient(circle, rgba(255,220,100,0.95), rgba(255,160,80,0.6), transparent)",
+                  filter: "blur(12px)",
+                  transform: "translateX(-50%)",
+                  pointerEvents: "none",
+                  zIndex: 5,
+                }}
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: [0, 1, 0.3], scale: [0, 10, 18] }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1.4, ease: "easeOut" }}
+              />
+            )}
+          </AnimatePresence>
+
+          {/* Rose + sparkle anchor at top of box */}
           <div
-            className="absolute"
-            style={{ bottom: BOX_H + 8, left: "50%" }}
+            style={{
+              position: "absolute",
+              bottom: BOX_H + 8,
+              left: "50%",
+              pointerEvents: "none",
+            }}
           >
+            {/* Beautiful roses */}
             <AnimatePresence>
-              {opened && ROSES.map((r) => (
-                <motion.div
-                  key={r.id}
-                  className="absolute pointer-events-none select-none"
-                  style={{ fontSize: r.size, lineHeight: 1 }}
-                  initial={{ x: 0, y: 0, opacity: 0, scale: 0, rotate: 0 }}
-                  animate={{
-                    x: r.x,
-                    y: r.y,
-                    opacity: 1,
-                    scale: r.scale,
-                    rotate: r.rotate,
-                  }}
-                  transition={{
-                    delay: r.delay,
-                    duration: 0.75,
-                    type: "spring",
-                    stiffness: 130,
-                    damping: 14,
-                  }}
-                >
-                  {r.e}
-                </motion.div>
-              ))}
+              {opened &&
+                ROSES.map((r) => (
+                  <motion.div
+                    key={r.id}
+                    style={{
+                      position: "absolute",
+                      left: r.x - r.size / 2,
+                      top: r.y - r.size / 2,
+                    }}
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{
+                      delay: r.delay,
+                      duration: 0.6,
+                      type: "spring",
+                      stiffness: 120,
+                      damping: 14,
+                    }}
+                  >
+                    <RoseFlower size={r.size} hue={r.hue} delay={r.delay} />
+                  </motion.div>
+                ))}
             </AnimatePresence>
 
+            {/* Sakura petal sparkles */}
             <AnimatePresence>
-              {opened && SPARKLES.map((s) => (
-                <motion.div
-                  key={s.id}
-                  className="absolute pointer-events-none select-none"
-                  style={{ fontSize: 16, lineHeight: 1 }}
-                  initial={{ x: 0, y: 0, opacity: 0, scale: 0 }}
-                  animate={{
-                    x: s.x,
-                    y: s.y,
-                    opacity: [0, 1, 1, 0],
-                    scale: [0, 1.3, 1, 0],
-                  }}
-                  transition={{ delay: s.delay, duration: 1.1, ease: "easeOut" }}
-                >
-                  ✨
-                </motion.div>
-              ))}
+              {opened &&
+                PETALS.map((p) => (
+                  <motion.div
+                    key={p.id}
+                    style={{
+                      position: "absolute",
+                      fontSize: 18,
+                      lineHeight: 1,
+                    }}
+                    initial={{ x: 0, y: 0, opacity: 0, scale: 0, rotate: 0 }}
+                    animate={{
+                      x: p.x,
+                      y: p.y,
+                      opacity: [0, 1, 1, 0],
+                      scale: [0, 1.4, 1, 0],
+                      rotate: p.x > 0 ? 45 : -45,
+                    }}
+                    transition={{
+                      delay: p.delay,
+                      duration: 1.2,
+                      ease: "easeOut",
+                    }}
+                  >
+                    🌸
+                  </motion.div>
+                ))}
             </AnimatePresence>
           </div>
 
-          {/* Gift box — clickable */}
+          {/* Gift box */}
           <motion.div
             className="absolute"
             style={{
@@ -158,16 +211,32 @@ export default function GiftSection() {
             initial={{ opacity: 0, y: 40 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            whileTap={!opened ? { scale: 0.95 } : {}}
+            whileTap={!opened ? { scale: 0.94 } : {}}
           >
-            {/* Lid */}
+            {/* Glow pulse on box before opening */}
+            {!opened && (
+              <motion.div
+                style={{
+                  position: "absolute",
+                  inset: -12,
+                  borderRadius: 12,
+                  background:
+                    "radial-gradient(ellipse, rgba(255,180,80,0.2), transparent 70%)",
+                  pointerEvents: "none",
+                }}
+                animate={{ opacity: [0.4, 1, 0.4], scale: [0.95, 1.05, 0.95] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              />
+            )}
+
+            {/* Lid wrapper for positioning */}
             <div
               style={{
                 position: "absolute",
                 top: 0,
                 left: "50%",
                 transform: "translateX(-50%)",
-                width: LID_W,
+                width: BOX_W + 16,
                 zIndex: 20,
               }}
             >
@@ -175,10 +244,10 @@ export default function GiftSection() {
                 style={{ transformOrigin: "center top", width: "100%" }}
                 animate={
                   opened
-                    ? { y: -120, scale: 0.7, opacity: 0 }
+                    ? { y: -130, scale: 0.65, opacity: 0 }
                     : { y: 0, scale: 1, opacity: 1 }
                 }
-                transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+                transition={{ duration: 0.55, ease: [0.4, 0, 0.2, 1] }}
               >
                 {/* Lid body */}
                 <div
@@ -188,12 +257,11 @@ export default function GiftSection() {
                     borderRadius: "6px 6px 2px 2px",
                     background:
                       "linear-gradient(145deg, #d4142e 0%, #a8001e 55%, #800018 100%)",
-                    boxShadow: "0 -4px 24px rgba(200,16,46,0.35)",
+                    boxShadow: "0 -4px 24px rgba(200,16,46,0.4)",
                     position: "relative",
                     overflow: "hidden",
                   }}
                 >
-                  {/* Ribbon stripe on lid */}
                   <div
                     style={{
                       position: "absolute",
@@ -202,8 +270,7 @@ export default function GiftSection() {
                       left: 0,
                       right: 0,
                       height: 13,
-                      background:
-                        "linear-gradient(to bottom, #fef3c7, #f59e0b, #fef3c7)",
+                      background: "linear-gradient(to bottom, #fef3c7, #f59e0b, #fef3c7)",
                     }}
                   />
                   <div
@@ -211,7 +278,7 @@ export default function GiftSection() {
                       position: "absolute",
                       inset: 0,
                       background:
-                        "linear-gradient(to bottom, rgba(255,255,255,0.14), transparent)",
+                        "linear-gradient(to bottom, rgba(255,255,255,0.15), transparent)",
                       borderRadius: "6px 6px 2px 2px",
                     }}
                   />
@@ -221,49 +288,49 @@ export default function GiftSection() {
                 <div
                   style={{
                     position: "absolute",
-                    top: -26,
+                    top: -28,
                     left: "50%",
                     transform: "translateX(-50%)",
-                    width: 80,
-                    height: 32,
+                    width: 88,
+                    height: 36,
                   }}
                 >
                   {/* Left loop */}
                   <div
                     style={{
                       position: "absolute",
-                      width: 34, height: 24,
-                      background: "linear-gradient(135deg, #fef3c7, #f59e0b)",
+                      width: 36, height: 26,
+                      background: "linear-gradient(135deg, #fef9c3, #f59e0b)",
                       borderRadius: "50% 10% 10% 50%",
-                      left: 2, top: 4,
+                      left: 4, top: 5,
                       transform: "rotate(-12deg)",
                       transformOrigin: "right center",
-                      boxShadow: "inset 0 0 6px rgba(0,0,0,0.2)",
+                      boxShadow: "inset 0 0 6px rgba(0,0,0,0.18)",
                     }}
                   />
                   {/* Right loop */}
                   <div
                     style={{
                       position: "absolute",
-                      width: 34, height: 24,
-                      background: "linear-gradient(135deg, #fef3c7, #f59e0b)",
+                      width: 36, height: 26,
+                      background: "linear-gradient(135deg, #fef9c3, #f59e0b)",
                       borderRadius: "10% 50% 50% 10%",
-                      right: 2, top: 4,
+                      right: 4, top: 5,
                       transform: "rotate(12deg)",
                       transformOrigin: "left center",
-                      boxShadow: "inset 0 0 6px rgba(0,0,0,0.2)",
+                      boxShadow: "inset 0 0 6px rgba(0,0,0,0.18)",
                     }}
                   />
-                  {/* Center knot */}
+                  {/* Knot */}
                   <div
                     style={{
                       position: "absolute",
-                      width: 18, height: 18,
+                      width: 20, height: 20,
                       background: "radial-gradient(circle, #fef9c3, #f59e0b)",
                       borderRadius: "50%",
                       left: "50%", top: "50%",
                       transform: "translate(-50%, -50%)",
-                      boxShadow: "0 0 10px rgba(245,158,11,0.6)",
+                      boxShadow: "0 0 12px rgba(245,158,11,0.7)",
                       zIndex: 2,
                     }}
                   />
@@ -287,31 +354,24 @@ export default function GiftSection() {
                 overflow: "hidden",
               }}
             >
-              {/* Vertical ribbon */}
               <div
                 style={{
                   position: "absolute",
                   top: 0, bottom: 0,
-                  left: "50%",
-                  transform: "translateX(-50%)",
+                  left: "50%", transform: "translateX(-50%)",
                   width: 13,
-                  background:
-                    "linear-gradient(to right, #fef3c7, #f59e0b, #fef3c7)",
+                  background: "linear-gradient(to right, #fef3c7, #f59e0b, #fef3c7)",
                 }}
               />
-              {/* Horizontal ribbon */}
               <div
                 style={{
                   position: "absolute",
-                  top: "50%",
-                  transform: "translateY(-50%)",
+                  top: "50%", transform: "translateY(-50%)",
                   left: 0, right: 0,
                   height: 13,
-                  background:
-                    "linear-gradient(to bottom, #fef3c7, #f59e0b, #fef3c7)",
+                  background: "linear-gradient(to bottom, #fef3c7, #f59e0b, #fef3c7)",
                 }}
               />
-              {/* Shine */}
               <div
                 style={{
                   position: "absolute",
@@ -325,7 +385,7 @@ export default function GiftSection() {
         </div>
 
         {/* Caption */}
-        <div className="text-center max-w-xs">
+        <div className="text-center max-w-sm">
           <AnimatePresence mode="wait">
             {!opened ? (
               <motion.p
@@ -347,7 +407,7 @@ export default function GiftSection() {
                 className="flex flex-col items-center gap-3"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.9, duration: 0.8 }}
+                transition={{ delay: 1.0, duration: 0.9 }}
               >
                 <p
                   style={{
@@ -357,11 +417,13 @@ export default function GiftSection() {
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
-                    fontSize: "1.6rem",
+                    fontSize: "1.55rem",
                     fontWeight: "bold",
+                    lineHeight: 1.4,
                   }}
                 >
-                  With all my love 🌹
+                  Thank you for being my happiness
+                  <br />for 4 beautiful years 🌹
                 </p>
                 <p
                   style={{
@@ -371,7 +433,7 @@ export default function GiftSection() {
                     lineHeight: 1.6,
                   }}
                 >
-                  Every rose is a reason I love you, Kiki
+                  Every rose bloomed because of you, Kiki
                 </p>
               </motion.div>
             )}

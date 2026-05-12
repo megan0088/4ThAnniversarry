@@ -13,7 +13,7 @@ export default function HeroSection() {
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   const handleScroll = () => {
-    document.getElementById("timeline")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("gift")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -115,9 +115,9 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ delay: 0.5, duration: 1.2, ease: "easeOut" }}
         >
-          Happy 4th
+          Four Years
           <br />
-          Anniversary
+          With You
         </motion.h1>
 
         {/* Heartbeat divider */}
@@ -166,7 +166,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.4, duration: 0.8 }}
         >
-          4 years of love, memories, and forever together.
+          Every moment with you became my favorite memory.
         </motion.p>
 
         {/* Names */}
@@ -199,7 +199,7 @@ export default function HeroSection() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.96 }}
         >
-          Start Our Journey ✨
+          Open The Gift 🎁
         </motion.button>
       </motion.div>
 

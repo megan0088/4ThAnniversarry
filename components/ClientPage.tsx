@@ -1,6 +1,7 @@
 "use client";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { motion } from "framer-motion";
+import Lenis from "lenis";
 import LoadingScreen from "./LoadingScreen";
 import CustomCursor from "./CustomCursor";
 import SakuraPetals from "./SakuraPetals";
@@ -14,13 +15,32 @@ import LoveLetterSection from "./LoveLetterSection";
 import MusicPlayer from "./MusicPlayer";
 import CountdownTimer from "./CountdownTimer";
 import ReasonsSection from "./ReasonsSection";
-import FinalScene from "./FinalScene";
+import FinalAnimeScene from "./FinalAnimeScene";
+import EndingCredits from "./EndingCredits";
 import Footer from "./Footer";
 
 export default function ClientPage() {
   const [loaded, setLoaded] = useState(false);
-
   const handleLoadingComplete = useCallback(() => setLoaded(true), []);
+
+  // Lenis smooth scroll
+  useEffect(() => {
+    if (!loaded) return;
+    const lenis = new Lenis({
+      duration: 1.3,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+    });
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    const id = requestAnimationFrame(raf);
+    return () => {
+      cancelAnimationFrame(id);
+      lenis.destroy();
+    };
+  }, [loaded]);
 
   return (
     <>
@@ -32,17 +52,13 @@ export default function ClientPage() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, ease: "easeInOut" }}
         >
-          {/* Global overlays */}
           <CustomCursor />
           <StarsBackground />
           <SakuraPetals />
           <FloatingHearts />
           <MusicPlayer />
-
-          {/* Navigation */}
           <Navbar />
 
-          {/* Page sections */}
           <main>
             <HeroSection />
             <GiftSection />
@@ -50,7 +66,8 @@ export default function ClientPage() {
             <LoveLetterSection />
             <CountdownTimer />
             <ReasonsSection />
-            <FinalScene />
+            <FinalAnimeScene />
+            <EndingCredits />
           </main>
 
           <Footer />

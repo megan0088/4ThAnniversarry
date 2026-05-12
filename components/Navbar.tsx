@@ -8,8 +8,8 @@ const links = [
   { href: "#gift", label: "Gift" },
   { href: "#gallery", label: "Gallery" },
   { href: "#letter", label: "Letter" },
-  { href: "#countdown", label: "Countdown" },
   { href: "#reasons", label: "Reasons" },
+  { href: "#final", label: "Ending" },
 ];
 
 export default function Navbar() {
