@@ -5,7 +5,7 @@ import { Heart, Menu, X } from "lucide-react";
 
 const links = [
   { href: "#hero", label: "Home" },
-  { href: "#timeline", label: "Story" },
+  { href: "#gift", label: "Gift" },
   { href: "#gallery", label: "Gallery" },
   { href: "#letter", label: "Letter" },
   { href: "#countdown", label: "Countdown" },

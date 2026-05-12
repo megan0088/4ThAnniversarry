@@ -8,7 +8,7 @@ import StarsBackground from "./StarsBackground";
 import FloatingHearts from "./FloatingHearts";
 import Navbar from "./Navbar";
 import HeroSection from "./HeroSection";
-import TimelineSection from "./TimelineSection";
+import GiftSection from "./GiftSection";
 import GallerySection from "./GallerySection";
 import LoveLetterSection from "./LoveLetterSection";
 import MusicPlayer from "./MusicPlayer";
@@ -45,7 +45,7 @@ export default function ClientPage() {
           {/* Page sections */}
           <main>
             <HeroSection />
-            <TimelineSection />
+            <GiftSection />
             <GallerySection />
             <LoveLetterSection />
             <CountdownTimer />
